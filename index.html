@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy and Cardio | Health & Wellness for Women</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #f3f3f3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #FF6B9D 0%, #4ECDC4 100%);
+            width: 0%;
+        }
+        
+        .nav-active {
+            color: #FF6B9D;
+            font-weight: 600;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Hero section responsive improvements */
+        .hero-section {
+            height: 94vh; /* Full viewport height */
+            height: 94dvh; /* Dynamic viewport height for mobile browsers */
+            min-height: 94vh;
+            min-height: 94dvh;
+        }
+        
+        /* Adjust for navigation bar */
+        .hero-section .hero-content-wrapper {
+            height: 100%;
+            padding-top: 80px; /* Account for nav height */
+            box-sizing: border-box;
+        }
+        
+        @media (max-height: 600px) {
+            .hero-section .hero-content-wrapper {
+                padding-top: 60px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-section .hero-content-wrapper {
+                padding-top: 70px;
+            }
+            .hero-section .hero-content {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+        
+        /* Particle Effects */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(236, 72, 153, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(even) {
+            background: rgba(6, 182, 212, 0.3);
+            animation-delay: -3s;
+        }
+        
+        .particle:nth-child(3n) {
+            background: rgba(251, 191, 36, 0.3);
+            animation-delay: -1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+        
+        .section-with-particles {
+            position: relative;
+        }
+        
+        /* Loading Screen Styles */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .loading-logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ec4899, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            animation: bounce-heart 1.5s ease-in-out infinite;
+        }
+        
+        .loading-logo-icon i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        .loading-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            animation: pulse-loading 2s ease-in-out infinite;
+        }
+
+        .loading-progress {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .loading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+            border-radius: 2px;
+            animation: loading-progress 3s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse-loading {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes loading-progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes bounce-heart {
+            0%, 20%, 50%, 80%, 100% {
+                transform: scale(1);
+            }
+            40% {
+                transform: scale(1.2);
+            }
+            60% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <div class="loading-logo-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="loading-logo-text">Candy & Cardio</div>
+        </div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Amazing Content...</div>
+        <div class="loading-progress">
+            <div class="loading-progress-bar"></div>
+        </div>
+    </div>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-400 to-cyan-400 flex items-center justify-center mr-2">
+                        <i class="fas fa-heart text-white"></i>
+                    </div>
+                    <a href="#" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Candy & Cardio
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="#blog" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-3 mt-4 pb-4">
+                    <a href="#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="#blog" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section relative overflow-hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="videos/hero-section-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-40 z-5"></div>
+        <div class="hero-content-wrapper flex items-center relative z-10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-4xl mx-auto text-center fade-in w-full hero-content">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 slide-in-left leading-tight">
+                    Balance Your <span class="text-yellow-300">Sweet</span> & <span class="text-cyan-200">Strong</span>
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mb-6 sm:mb-8 slide-in-right px-4 sm:px-0">
+                    Health, wellness & fitness advice with a fun, approachable twist
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
+                    <a href="#about" class="bg-white text-pink-600 px-6 sm:px-8 py-3 rounded-full font-semibold btn-hover shadow-lg pulse text-sm sm:text-base">
+                        Meet Casey
+                    </a>
+                    <a href="#blog" class="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 rounded-full font-semibold btn-hover text-sm sm:text-base">
+                        Read Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Social Icons Floating -->
+        <div class="absolute bottom-6 sm:bottom-10 left-0 right-0 flex justify-center space-x-4 sm:space-x-6">
+            <a href="https://www.facebook.com/casey71dennis" target="_blank" class="social-icon text-white text-xl sm:text-2xl hover:text-blue-400">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/casey00dennis" target="_blank" class="social-icon text-white text-xl sm:text-2xl hover:text-pink-400">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" class="social-icon text-white text-xl sm:text-2xl hover:text-red-500">
+                <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="https://www.threads.com/@casey00dennis" target="_blank" class="social-icon text-white text-xl sm:text-2xl hover:text-gray-700">
+                <i class="fab fa-threads"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white section-with-particles">
+        <div class="particles-container"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">About Casey</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-cyan-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-r from-pink-100 to-cyan-100 rounded-2xl overflow-hidden">
+                            <img src="images/profile (2).jpg" 
+                                 alt="Casey Dennis" 
+                                 class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-yellow-400 text-white p-4 rounded-full shadow-xl">
+                            <i class="fas fa-heart text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                        Welcome to my corner of inspiration!
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm Casey Dennis, a content creator passionate about beauty, skincare, fitness, and nutrition. 
+                        I love sharing tips, ideas, and everything I learn along the way to help you look and feel your best.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Follow along for fresh content, fun discoveries, and a daily dose of motivation! 
+                        My approach is all about balance - enjoying life's sweet moments while staying committed 
+                        to your health and wellness goals.
+                    </p>
+                    
+                    <div class="bg-gradient-to-r from-pink-50 to-cyan-50 p-4 rounded-xl mb-8">
+                        <div class="flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500 mb-1">1.3k</div>
+                                <div class="text-gray-600 text-sm">Followers</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="bg-pink-50 px-4 py-2 rounded-full flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center mr-2">
+                                <i class="fas fa-dumbbell text-white text-sm"></i>
+                            </div>
+                            <span class="font-medium text-pink-700">Fitness</span>
+                        </div>
+                        <div class="bg-cyan-50 px-4 py-2 rounded-full flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center mr-2">
+                                <i class="fas fa-apple-alt text-white text-sm"></i>
+                            </div>
+                            <span class="font-medium text-cyan-700">Nutrition</span>
+                        </div>
+                        <div class="bg-yellow-50 px-4 py-2 rounded-full flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-2">
+                                <i class="fas fa-spa text-white text-sm"></i>
+                            </div>
+                            <span class="font-medium text-yellow-700">Wellness</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-medium btn-hover">
+                            Work With Me
+                        </a>
+                        <a href="https://www.instagram.com/casey00dennis" target="_blank" class="border border-pink-500 text-pink-500 hover:bg-pink-50 px-6 py-3 rounded-full font-medium btn-hover">
+                            Follow Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Wellness Section -->
+    <section id="wellness" class="py-20 bg-white section-with-particles">
+        <div class="particles-container"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Health & Wellness</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-cyan-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Wellness Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-pink-100 to-cyan-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Mental Health" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center mr-2">
+                                <i class="fas fa-brain text-white text-sm"></i>
+                            </div>
+                            <span class="font-medium text-pink-600">Mental Health</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mindfulness Practices for Busy Women</h3>
+                        <p class="text-gray-600 mb-4">
+                            Discover simple yet effective mindfulness techniques that fit into your busy schedule to reduce stress and increase focus.
+                        </p>
+                        <a href="#" class="text-pink-500 font-medium hover:text-pink-600 flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Wellness Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-cyan-100 to-yellow-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Balanced Eating Without Deprivation" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center mr-2">
+                                <i class="fas fa-utensils text-white text-sm"></i>
+                            </div>
+                            <span class="font-medium text-cyan-600">Nutrition</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Balanced Eating Without Deprivation</h3>
+                        <p class="text-gray-600 mb-4">
+                            Learn how to enjoy all foods in moderation while maintaining a healthy, balanced diet that fuels your body and soul.
+                        </p>
+                        <a href="#" class="text-cyan-500 font-medium hover:text-cyan-600 flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Wellness Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-yellow-100 to-pink-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Sleep" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-2">
+                                <i class="fas fa-moon text-white text-sm"></i>
+                            </div>
+                            <span class="font-medium text-yellow-600">Sleep Hygiene</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">The Ultimate Guide to Better Sleep</h3>
+                        <p class="text-gray-600 mb-4">
+                            Transform your sleep routine with these science-backed tips for falling asleep faster and waking up refreshed.
+                        </p>
+                        <a href="#" class="text-yellow-500 font-medium hover:text-yellow-600 flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#blog" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold btn-hover shadow-lg">
+                    View All Wellness Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitness Section -->
+    <section id="fitness" class="py-20 bg-gradient-to-r from-pink-50 to-cyan-50 section-with-particles">
+        <div class="particles-container"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Fitness & Nutrition</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-cyan-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-r from-pink-100 to-cyan-100 rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Fitness" 
+                                 class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-full shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-pink-400 to-cyan-400 flex items-center justify-center">
+                                <i class="fas fa-dumbbell text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                        Fitness That Fits Your Life
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        My fitness philosophy is all about finding what works for YOU. No extreme diets or punishing workouts - 
+                        just sustainable, enjoyable movement that makes you feel strong and confident.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Home Workouts for Busy Schedules</h4>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Nutrition Without Deprivation</h4>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800">Mind-Body Connection</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-quote-left text-pink-500"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600 italic mb-2">
+                                    "Fitness shouldn't feel like punishment. When you find activities you genuinely enjoy, 
+                                    staying active becomes something you look forward to, not dread."
+                                </p>
+                                <p class="text-right text-pink-500 font-medium">- Casey Dennis</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#blog" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold btn-hover inline-block">
+                        Explore Fitness Guides
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white section-with-particles">
+        <div class="particles-container"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Latest Blog Posts</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-cyan-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-pink-100 to-yellow-100 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                             alt="Healthy Breakfast" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Nutrition
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>June 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">5 Quick & Healthy Breakfasts for Busy Mornings</h3>
+                        <p class="text-gray-600 mb-4">
+                            Start your day right with these nutritious breakfast ideas that take less than 10 minutes to prepare.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-pink-500 font-medium hover:text-pink-600 flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <div class="relative">
+                                    <button onclick="showSharePopup(this)" class="text-gray-400 hover:text-blue-500 focus:outline-none">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                    <div class="share-popup hidden absolute bottom-full right-0 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg p-3 z-10 min-w-48">
+                                        <div class="text-sm font-medium text-gray-700 mb-2">Share this post</div>
+                                        <div class="flex items-center bg-gray-50 rounded p-2 mb-2">
+                                            <input type="text" readonly value="" class="share-url flex-1 text-xs text-gray-600 bg-transparent border-none outline-none">
+                                            <button onclick="copyToClipboard(this)" class="ml-2 text-blue-500 hover:text-blue-600 text-xs font-medium">
+                                                Copy
+                                            </button>
+                                        </div>
+                                        <div class="text-xs text-gray-500">Copy link to share on social media</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-cyan-100 to-pink-100 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Yoga Flow for Stress Relief" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Fitness
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>June 8, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Yoga Flow for Stress Relief: 20 Minute Routine</h3>
+                        <p class="text-gray-600 mb-4">
+                            This gentle yoga sequence is perfect for unwinding after a long day and melting away tension.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-cyan-500 font-medium hover:text-cyan-600 flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <div class="relative">
+                                    <button onclick="showSharePopup(this)" class="text-gray-400 hover:text-blue-500 focus:outline-none">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                    <div class="share-popup hidden absolute bottom-full right-0 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg p-3 z-10 min-w-48">
+                                        <div class="text-sm font-medium text-gray-700 mb-2">Share this post</div>
+                                        <div class="flex items-center bg-gray-50 rounded p-2 mb-2">
+                                            <input type="text" readonly value="" class="share-url flex-1 text-xs text-gray-600 bg-transparent border-none outline-none">
+                                            <button onclick="copyToClipboard(this)" class="ml-2 text-blue-500 hover:text-blue-600 text-xs font-medium">
+                                                Copy
+                                            </button>
+                                        </div>
+                                        <div class="text-xs text-gray-500">Copy link to share on social media</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-yellow-100 to-cyan-100 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Skincare" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Beauty
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>June 1, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Summer Skincare Essentials: My Routine</h3>
+                        <p class="text-gray-600 mb-4">
+                            Keep your skin glowing and protected all summer long with these must-have products and tips.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-yellow-500 font-medium hover:text-yellow-600 flex items-center">
+                                Read More <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <div class="flex space-x-2">
+                                <div class="relative">
+                                    <button onclick="showSharePopup(this)" class="text-gray-400 hover:text-blue-500 focus:outline-none">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                    <div class="share-popup hidden absolute bottom-full right-0 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg p-3 z-10 min-w-48">
+                                        <div class="text-sm font-medium text-gray-700 mb-2">Share this post</div>
+                                        <div class="flex items-center bg-gray-50 rounded p-2 mb-2">
+                                            <input type="text" readonly value="" class="share-url flex-1 text-xs text-gray-600 bg-transparent border-none outline-none">
+                                            <button onclick="copyToClipboard(this)" class="ml-2 text-blue-500 hover:text-blue-600 text-xs font-medium">
+                                                Copy
+                                            </button>
+                                        </div>
+                                        <div class="text-xs text-gray-500">Copy link to share on social media</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="inline-block border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white px-8 py-3 rounded-full font-semibold btn-hover">
+                    View All Blog Posts
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-pink-50 to-cyan-50 section-with-particles">
+        <div class="particles-container"></div>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Let's Connect</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-400 to-cyan-400 mx-auto"></div>
+            </div>
+            
+            <!-- Centered Rounded Square Container -->
+            <div class="flex justify-center">
+                <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 max-w-2xl w-full mx-4">
+                    <div>
+                         <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Get In Touch</h3>
+                         <p class="text-gray-600 mb-8 text-center">
+                             Have questions, collaboration ideas, or just want to say hi? I'd love to hear from you! 
+                             Fill out the form or connect with me on social media.
+                         </p>
+                         
+                         <div class="space-y-6">
+                             <div class="flex items-start">
+                                 <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-4 mt-1">
+                                     <i class="fas fa-envelope text-pink-500"></i>
+                                 </div>
+                                 <div>
+                                     <h4 class="font-bold text-gray-800 mb-1">Email Me</h4>
+                                     <a href="mailto:caseydennis71@gmail.com" class="text-cyan-600 hover:text-cyan-700">caseydennis71@gmail.com</a>
+                                 </div>
+                             </div>
+                             
+                             <div class="flex items-start">
+                                 <div class="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center mr-4 mt-1">
+                                     <i class="fas fa-globe text-cyan-500"></i>
+                                 </div>
+                                 <div>
+                                     <h4 class="font-bold text-gray-800 mb-1">Follow Me</h4>
+                                     <div class="flex space-x-4">
+                                         <a href="https://www.facebook.com/casey71dennis" target="_blank" class="text-blue-500 hover:text-blue-600">
+                                             <i class="fab fa-facebook-f"></i>
+                                         </a>
+                                         <a href="https://www.instagram.com/casey00dennis" target="_blank" class="text-pink-500 hover:text-pink-600">
+                                             <i class="fab fa-instagram"></i>
+                                         </a>
+                                         <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" class="text-red-500 hover:text-red-600">
+                                             <i class="fab fa-pinterest"></i>
+                                         </a>
+                                         <a href="https://www.threads.com/@casey00dennis" target="_blank" class="text-gray-700 hover:text-gray-900">
+                                             <i class="fab fa-threads"></i>
+                                         </a>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <div class="flex items-start">
+                                 <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mr-4 mt-1">
+                                     <i class="fas fa-map-marker-alt text-yellow-500"></i>
+                                 </div>
+                                 <div>
+                                     <h4 class="font-bold text-gray-800 mb-1">Based In</h4>
+                                     <p class="text-gray-600">Chillicothe, Ohio</p>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-400 to-cyan-400 flex items-center justify-center mr-2">
+                            <i class="fas fa-heart text-white"></i>
+                        </div>
+                        <a href="#" class="brand-font text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                            Candy & Cardio
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Helping you find the perfect balance between health and happiness.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/casey71dennis" target="_blank" class="text-gray-400 hover:text-blue-400">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/casey00dennis" target="_blank" class="text-gray-400 hover:text-pink-400">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" class="text-gray-400 hover:text-red-500">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://www.threads.com/@casey00dennis" target="_blank" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-right">
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start justify-end">
+                            <span>Chillicothe, Ohio</span>
+                            <i class="fas fa-map-marker-alt ml-3 mt-1 text-pink-400"></i>
+                        </li>
+                        <li class="flex items-start justify-end">
+                            <a href="mailto:caseydennis71@gmail.com" class="hover:text-white">caseydennis71@gmail.com</a>
+                            <i class="fas fa-envelope ml-3 mt-1 text-cyan-400"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Candy & Cardio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Scroll Progress Bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Back to Top Button
+            const backToTopButton = document.getElementById('backToTop');
+            if (winScroll > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        };
+        
+        // Back to Top Button Click
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animated Counter for Stats
+        function animateCounters() {
+            const counters = [
+                { element: document.getElementById('followerCount1'), target: 1300, duration: 2000 },
+                { element: document.getElementById('followerCount2'), target: 400, duration: 2000 },
+                { element: document.getElementById('blogPostCount'), target: 42, duration: 2000 },
+                { element: document.getElementById('happyClients'), target: 200, duration: 2000 }
+            ];
+            
+            const startTime = Date.now();
+            
+            function updateCounters() {
+                const elapsed = Date.now() - startTime;
+                
+                counters.forEach(counter => {
+                    if (elapsed < counter.duration) {
+                        const progress = elapsed / counter.duration;
+                        const value = Math.floor(progress * counter.target);
+                        counter.element.textContent = value;
+                    } else {
+                        counter.element.textContent = counter.target;
+                    }
+                });
+                
+                if (elapsed < Math.max(...counters.map(c => c.duration))) {
+                    requestAnimationFrame(updateCounters);
+                }
+            }
+            
+            updateCounters();
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'about') {
+                        animateCounters();
+                    }
+                    
+                    if (entry.target.classList.contains('nav-link')) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('nav-active');
+                        });
+                        entry.target.classList.add('nav-active');
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Observe nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            observer.observe(link);
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                    }
+                }
+            });
+        });
+        
+        // Share popup functionality
+        function showSharePopup(button) {
+            // Hide all other popups first
+            document.querySelectorAll('.share-popup').forEach(popup => {
+                popup.classList.add('hidden');
+            });
+            
+            const popup = button.nextElementSibling;
+            const urlInput = popup.querySelector('.share-url');
+            
+            // Set the current page URL
+            urlInput.value = window.location.href;
+            
+            // Show the popup
+            popup.classList.remove('hidden');
+            
+            // Hide popup when clicking outside
+            setTimeout(() => {
+                document.addEventListener('click', function hidePopup(e) {
+                    if (!popup.contains(e.target) && !button.contains(e.target)) {
+                        popup.classList.add('hidden');
+                        document.removeEventListener('click', hidePopup);
+                    }
+                });
+            }, 100);
+        }
+        
+        function copyToClipboard(button) {
+            const urlInput = button.parentElement.querySelector('.share-url');
+            
+            // Select and copy the text
+            urlInput.select();
+            urlInput.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                document.execCommand('copy');
+                
+                // Show feedback
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('text-green-500');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('text-green-500');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                // Fallback for modern browsers
+                navigator.clipboard.writeText(urlInput.value).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.classList.add('text-green-500');
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.classList.remove('text-green-500');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Clipboard API failed: ', err);
+                });
+            }
+        }
+        
+        // Particle Animation System
+        function createParticles() {
+            const particleContainers = document.querySelectorAll('.particles-container');
+            
+            particleContainers.forEach(container => {
+                // Create 15 particles per container
+                for (let i = 0; i < 15; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // Random size between 4px and 12px
+                    const size = Math.random() * 8 + 4;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    
+                    // Random position
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    
+                    // Random animation delay
+                    particle.style.animationDelay = Math.random() * 6 + 's';
+                    
+                    // Random animation duration
+                    particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                    
+                    container.appendChild(particle);
+                }
+            });
+        }
+        
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
+        
+        // Loading Screen Management
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.classList.add('hidden');
+            
+            // Remove from DOM after transition completes
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
+        
+        // Wait for all resources to load
+        window.addEventListener('load', () => {
+            // Add a minimum loading time for better UX (3 seconds)
+            setTimeout(hideLoadingScreen, 3000);
+        });
+        
+        // Fallback: Hide loading screen after 5 seconds regardless
+        setTimeout(hideLoadingScreen, 5000);
+    </script>
+</body>
+</html>
