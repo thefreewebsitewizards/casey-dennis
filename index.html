@@ -116,13 +116,13 @@
         /* Adjust for navigation bar */
         .hero-section .hero-content-wrapper {
             height: 100%;
-            padding-top: 80px; /* Account for nav height */
+            padding-top: 10px; /* Further reduced padding to move content higher */
             box-sizing: border-box;
         }
         
         @media (max-height: 600px) {
             .hero-section .hero-content-wrapper {
-                padding-top: 60px;
+                padding-top: 5px;
             }
         }
         
@@ -373,11 +373,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section relative overflow-hidden">
-        <!-- Video Background -->
-        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
-            <source src="videos/hero-section-background.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- Image Background -->
+        <img src="images/Picture1.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0">
         <!-- Dark overlay for better text readability -->
         <div class="absolute inset-0 bg-black bg-opacity-40 z-5"></div>
         <div class="hero-content-wrapper flex items-center relative z-10">
@@ -390,10 +387,10 @@
                     Health, wellness & fitness advice with a fun, approachable twist
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 sm:px-0">
-                    <a href="#about" class="bg-white text-pink-600 px-6 sm:px-8 py-3 rounded-full font-semibold btn-hover shadow-lg pulse text-sm sm:text-base">
+                    <a href="#about" class="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 rounded-full font-semibold btn-hover text-sm sm:text-base">
                         Meet Casey
                     </a>
-                    <a href="#blog" class="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 rounded-full font-semibold btn-hover text-sm sm:text-base">
+                    <a href="#blog" class="bg-white text-pink-600 px-6 sm:px-8 py-3 rounded-full font-semibold btn-hover shadow-lg pulse text-sm sm:text-base">
                         Read Blog
                     </a>
                 </div>
