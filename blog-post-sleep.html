@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Guide to Better Sleep - Candy & Cardio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .brand-font { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Inter', sans-serif; }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-auto mr-2">
+                    <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Candy & Cardio
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-3 mt-4 pb-4">
+                    <a href="index.html#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="pt-8 md:pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-6">
+                    <a href="blog.html" class="inline-flex items-center text-pink-500 hover:text-pink-600 transition">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Blog
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-64 md:h-96 bg-gradient-to-r from-yellow-100 to-pink-100">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Better Sleep" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium mr-4">Sleep Hygiene</span>
+                            <span class="text-gray-500 text-sm">6 min read</span>
+                        </div>
+                        
+                        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                            The Ultimate Guide to Better Sleep
+                        </h1>
+                        
+                        <div class="flex items-center mb-8">
+                            <img src="images/profile.jpg" alt="Casey Dennis" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <p class="font-semibold text-gray-800">Casey Dennis</p>
+                                <p class="text-gray-500 text-sm">Published on January 20, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="prose prose-lg max-w-none">
+                            <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                                Transform your sleep routine with these science-backed tips for falling asleep faster and waking up refreshed.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">Why Sleep Matters More Than You Think</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Quality sleep isn't just about feeling rested—it's fundamental to your physical health, mental well-being, and overall quality of life. During sleep, your body repairs tissues, consolidates memories, and regulates hormones that control hunger, stress, and mood.
+                            </p>
+                            
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Poor sleep can lead to weight gain, weakened immunity, increased stress, and difficulty concentrating. The good news? Small changes to your sleep routine can make a dramatic difference in how you feel every day.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">Creating the Perfect Sleep Environment</h2>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Temperature Control</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Your bedroom should be cool, ideally between 65-68°F (18-20°C). Your body temperature naturally drops as you prepare for sleep, and a cooler environment supports this process.
+                            </p>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Darkness is Key</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Even small amounts of light can disrupt your circadian rhythm. Invest in blackout curtains or an eye mask, and cover any LED lights from electronics. Consider using a red-light lamp for evening activities if you need some illumination.
+                            </p>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Minimize Noise</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Use earplugs, a white noise machine, or a fan to create consistent, soothing sounds that mask disruptive noises. Sudden sounds can wake you even if you don't remember waking up.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">The Power of a Consistent Sleep Schedule</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Going to bed and waking up at the same time every day—yes, even on weekends—helps regulate your body's internal clock. This makes it easier to fall asleep and wake up naturally.
+                            </p>
+                            
+                            <div class="bg-yellow-50 p-6 rounded-lg mb-6">
+                                <h4 class="font-semibold text-gray-800 mb-2">Pro Tip:</h4>
+                                <p class="text-gray-700">If you need to adjust your sleep schedule, do it gradually—shift your bedtime by 15-30 minutes earlier or later each night until you reach your desired schedule.</p>
+                            </div>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">Evening Routine for Better Sleep</h2>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">The 3-2-1 Rule</h3>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                                <li><strong>3 hours before bed:</strong> Stop eating large meals</li>
+                                <li><strong>2 hours before bed:</strong> Stop working or doing mentally stimulating activities</li>
+                                <li><strong>1 hour before bed:</strong> Stop looking at screens (phones, TV, computers)</li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Relaxing Activities to Try</h3>
+                            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                                <li>Reading a physical book</li>
+                                <li>Gentle stretching or yoga</li>
+                                <li>Taking a warm bath or shower</li>
+                                <li>Practicing meditation or deep breathing</li>
+                                <li>Journaling or gratitude practice</li>
+                                <li>Listening to calming music or podcasts</li>
+                            </ul>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">What to Do If You Can't Fall Asleep</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                If you've been lying in bed for more than 20 minutes without falling asleep, get up and do a quiet, relaxing activity in dim light until you feel sleepy. This prevents your brain from associating your bed with wakefulness.
+                            </p>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">The 4-7-8 Breathing Technique</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                This simple breathing exercise can help calm your nervous system:
+                            </p>
+                            <ol class="list-decimal pl-6 mb-6 text-gray-700">
+                                <li>Exhale completely through your mouth</li>
+                                <li>Close your mouth and inhale through your nose for 4 counts</li>
+                                <li>Hold your breath for 7 counts</li>
+                                <li>Exhale through your mouth for 8 counts</li>
+                                <li>Repeat 3-4 times</li>
+                            </ol>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">Morning Habits That Improve Sleep</h2>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Get Natural Light Early</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Expose yourself to bright light within the first hour of waking. This helps regulate your circadian rhythm and makes it easier to fall asleep at night. Even 10-15 minutes outside can make a difference.
+                            </p>
+                            
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Time Your Caffeine</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Avoid caffeine after 2 PM, as it can stay in your system for 6-8 hours. If you're sensitive to caffeine, consider cutting off even earlier.
+                            </p>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">Sample Evening Routine</h2>
+                            
+                            <div class="bg-yellow-50 p-6 rounded-lg mb-6">
+                                <h4 class="font-semibold text-gray-800 mb-2">9:00 PM:</h4>
+                                <p class="text-gray-700 mb-4">Finish dinner and any heavy snacks</p>
+                                
+                                <h4 class="font-semibold text-gray-800 mb-2">9:30 PM:</h4>
+                                <p class="text-gray-700 mb-4">Dim the lights and start winding down</p>
+                                
+                                <h4 class="font-semibold text-gray-800 mb-2">10:00 PM:</h4>
+                                <p class="text-gray-700 mb-4">Put away all screens and electronics</p>
+                                
+                                <h4 class="font-semibold text-gray-800 mb-2">10:15 PM:</h4>
+                                <p class="text-gray-700 mb-4">Take a warm shower or bath</p>
+                                
+                                <h4 class="font-semibold text-gray-800 mb-2">10:30 PM:</h4>
+                                <p class="text-gray-700 mb-4">Read, journal, or practice gentle stretches</p>
+                                
+                                <h4 class="font-semibold text-gray-800 mb-2">11:00 PM:</h4>
+                                <p class="text-gray-700">Lights out and practice breathing exercises</p>
+                            </div>
+                            
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4 mt-8">Be Patient With Yourself</h2>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Improving your sleep takes time—usually 2-4 weeks to see significant changes. Start with one or two changes rather than overhauling your entire routine at once. Small, consistent improvements will lead to better sleep and better days.
+                            </p>
+                            
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Remember, good sleep is not a luxury—it's a necessity for your health and well-being. Prioritize it just like you would exercise or healthy eating, and your body will thank you.
+                            </p>
+                        </div>
+                        
+                        <div class="border-t pt-8 mt-8">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img src="images/profile.jpg" alt="Casey Dennis" class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">Casey Dennis</h3>
+                                        <p class="text-gray-600">Wellness Coach & Fitness Enthusiast</p>
+                                        <p class="text-gray-500 text-sm mt-1">Helping women find balance in fitness, nutrition, and life.</p>
+                                    </div>
+                                </div>
+                                <a href="blog.html" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition">
+                                    More Articles
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-12 rounded-full object-cover mr-3">
+                <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                    Candy & Cardio
+                </a>
+            </div>
+            <p class="text-gray-400 mb-6">Balance Your Sweet & Strong</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/casey71dennis" target="_blank" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/casey00dennis" target="_blank" class="text-gray-400 hover:text-pink-400 text-xl transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" class="text-gray-400 hover:text-red-500 text-xl transition-colors">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="https://www.threads.com/@casey00dennis" target="_blank" class="text-gray-400 hover:text-gray-300 text-xl transition-colors">
+                    <i class="fab fa-threads"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2024 Candy & Cardio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-gradient-to-r from-yellow-500 to-pink-500 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 invisible z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = mobileMenuBtn.querySelector('i');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                
+                if (mobileMenu.classList.contains('open')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+
+    <!-- Scroll to Top JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            // Show/hide scroll to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            // Smooth scroll to top when button is clicked
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

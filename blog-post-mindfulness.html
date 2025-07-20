@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Practices for Busy Women - Candy & Cardio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .article-content h2 {
+            @apply text-2xl font-bold text-gray-800 mt-8 mb-4;
+        }
+        
+        .article-content h3 {
+            @apply text-xl font-semibold text-gray-700 mt-6 mb-3;
+        }
+        
+        .article-content p {
+            @apply text-gray-600 leading-relaxed mb-4;
+        }
+        
+        .article-content ul {
+            @apply list-disc list-inside text-gray-600 mb-4 space-y-2;
+        }
+        
+        .article-content blockquote {
+            @apply border-l-4 border-pink-500 pl-6 italic text-gray-700 my-6 bg-pink-50 py-4 rounded-r-lg;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-auto mr-2">
+                    <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Candy & Cardio
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-3 mt-4 pb-4">
+                    <a href="index.html#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="pt-8 md:pt-12 pb-8 bg-gradient-to-r from-pink-100 to-purple-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back to Blog Button -->
+                <div class="mb-6">
+                    <a href="blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-700 transition duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Blog
+                    </a>
+                </div>
+                
+                <div class="text-center">
+                <div class="flex items-center justify-center mb-4 space-x-3">
+                    <span class="bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium">Mental Health</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Mindfulness Practices for Busy Women
+                </h1>
+                <p class="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+                    Discover simple yet effective mindfulness techniques that fit into your busy schedule to reduce stress and increase focus.
+                </p>
+                <div class="flex items-center justify-center space-x-6 text-gray-500">
+                    <div class="flex items-center">
+                        <i class="far fa-calendar mr-2"></i>
+                        <span>March 15, 2025</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>8 min read</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-user mr-2"></i>
+                        <span>Casey Dennis</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Featured Image -->
+                <div class="mb-8 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Woman practicing mindfulness meditation in peaceful setting" 
+                         class="w-full h-64 md:h-96 object-cover">
+                </div>
+
+                <!-- Article Body -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 article-content">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        As busy women, we often feel like we're constantly juggling responsibilities, leaving little time for ourselves. However, incorporating mindfulness into our daily routine doesn't require hours of meditation. Simple, practical techniques can help us find moments of peace and clarity throughout our hectic days.
+                    </p>
+
+                    <h2>What is Mindfulness for Busy Women?</h2>
+                    <p>
+                        Mindfulness is the practice of being fully present in the moment, aware of where you are and what you're doing, without being overwhelmed by what's happening around you. For busy women, it's about finding small pockets of awareness that can be seamlessly integrated into your existing routine.
+                    </p>
+
+                    <blockquote>
+                        "Mindfulness isn't about finding more time in your day—it's about being more present in the time you have."
+                    </blockquote>
+
+                    <h2>Benefits of Mindfulness for Busy Women</h2>
+                    
+                    <h3>1. Reduced Stress and Anxiety</h3>
+                    <p>
+                        Regular mindfulness practice helps activate your body's relaxation response, reducing cortisol levels and helping you feel calmer throughout the day. Even a few minutes of mindful breathing can shift your nervous system from stress mode to rest mode.
+                    </p>
+
+                    <h3>2. Improved Focus and Productivity</h3>
+                    <p>
+                        When you train your mind to stay present, you become better at focusing on one task at a time. This improved concentration can make you more efficient and effective in both your personal and professional life.
+                    </p>
+
+                    <h3>3. Better Emotional Regulation</h3>
+                    <p>
+                        Mindfulness helps you observe your emotions without being overwhelmed by them. This creates space between feeling and reaction, allowing you to respond to challenging situations with greater clarity and composure.
+                    </p>
+
+                    <h3>4. Enhanced Self-Awareness</h3>
+                    <p>
+                        Regular mindfulness practice helps you become more aware of your thoughts, feelings, and patterns. This self-awareness is the first step toward making positive changes in your life and relationships.
+                    </p>
+
+                    <h2>Simple Mindfulness Practices for Your Busy Day</h2>
+                    
+                    <h3>The 3-Minute Morning Reset</h3>
+                    <p>
+                        Start your day with three minutes of mindful breathing before checking your phone or rushing into your routine. Sit comfortably, close your eyes, and focus on your breath. This simple practice sets a calm, intentional tone for your entire day.
+                    </p>
+
+                    <h3>Mindful Transitions</h3>
+                    <p>
+                        Use the moments between activities as mindfulness opportunities. Take three deep breaths before entering a meeting, feel your feet on the ground while walking to your car, or pause for a moment of gratitude before meals.
+                    </p>
+
+                    <h3>The STOP Technique</h3>
+                    <p>
+                        When feeling overwhelmed, use STOP: Stop what you're doing, Take a breath, Observe your thoughts and feelings, and Proceed with awareness. This technique can be used anywhere and takes less than a minute.
+                    </p>
+
+                    <h2>Quick Mindfulness Techniques for Busy Schedules</h2>
+                    
+                    <h3>Desk-Based Breathing</h3>
+                    <p>
+                        While at your desk, practice the 4-7-8 breathing technique: inhale for 4 counts, hold for 7, exhale for 8. This can be done discreetly during work and helps reset your nervous system when stress levels rise.
+                    </p>
+
+                    <h3>Mindful Commuting</h3>
+                    <p>
+                        Transform your commute into mindfulness time. If driving, focus on the feeling of your hands on the steering wheel and your body in the seat. If using public transport, practice observing your surroundings without judgment.
+                    </p>
+
+                    <h3>Mindful Strength Training</h3>
+                    <p>
+                        During weight lifting, focus on the muscle groups you're working, the quality of each repetition, and maintaining proper form. Feel the weight in your hands and the effort in your muscles rather than just counting reps.
+                    </p>
+
+                    <h2>Getting Started with Mindfulness</h2>
+                    <p>
+                        Start small with just 2-3 minutes of mindfulness practice daily. Choose one technique that resonates with you and practice it consistently for a week before adding others. Remember, consistency is more important than duration—even one minute of mindful breathing is valuable.
+                    </p>
+
+                    <h3>Creating Mindful Moments</h3>
+                    <p>
+                        Look for natural pause points in your day where you can insert brief mindfulness practices. This could be while your coffee brews, during your lunch break, or before bed. These small moments add up to create significant positive changes.
+                    </p>
+
+                    <h2>Overcoming Common Challenges</h2>
+                    <p>
+                        It's completely normal for your mind to wander during mindfulness practice—this isn't failure, it's part of the process. When you notice your thoughts drifting to your to-do list or worries, gently acknowledge them and return your attention to the present moment. Each time you do this, you're building your mindfulness muscle.
+                    </p>
+
+                    <p>
+                        If you feel like you don't have time for mindfulness, remember that it's not about adding more to your schedule—it's about being more present in what you're already doing. Even washing dishes or folding laundry can become mindful activities when done with full attention.
+                    </p>
+
+                    <h2>Your Mindful Movement Journey</h2>
+                    <p>
+                        Mindful movement is about finding balance—not just physical balance, but the balance between effort and ease, strength and flexibility, pushing yourself and listening to your body. It's a practice that honors both your ambitions and your well-being.
+                    </p>
+
+                    <p>
+                        Start today with just 10 minutes of mindful movement. Whether it's a gentle stretch, a mindful walk, or a few yoga poses, pay attention to how your body feels and moves. Notice the difference when you bring full awareness to your physical practice—this is where true fitness transformation begins.
+                    </p>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="mt-8 bg-white rounded-2xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="images/profile.jpg" alt="Casey Dennis" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Casey Dennis</h3>
+                            <p class="text-gray-600">Wellness Coach & Mindfulness Advocate</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        Casey is a certified wellness coach who specializes in helping busy women find balance through mindful living. With over 5 years of experience in holistic health, she believes that small, consistent changes can lead to transformative results.
+                    </p>
+                </div>
+
+                <!-- Related Articles -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Related Articles</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="blog-post-nutrition.html" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                            <div class="h-48 bg-gradient-to-r from-cyan-100 to-yellow-100">
+                                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Nutrition" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm font-medium">Nutrition</span>
+                                <h4 class="text-lg font-bold text-gray-800 mt-3 mb-2">Balanced Eating Without Deprivation</h4>
+                                <p class="text-gray-600 text-sm">Learn sustainable nutrition habits that nourish your body and soul.</p>
+                            </div>
+                        </a>
+                        
+                        <a href="blog-post-sleep.html" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                            <div class="h-48 bg-gradient-to-r from-yellow-100 to-pink-100">
+                                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Sleep" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium">Sleep Hygiene</span>
+                                <h4 class="text-lg font-bold text-gray-800 mt-3 mb-2">The Ultimate Guide to Better Sleep</h4>
+                                <p class="text-gray-600 text-sm">Transform your sleep routine with science-backed tips for better rest.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back to Blog -->
+                <div class="mt-8 text-center">
+                    <a href="blog.html" class="inline-flex items-center bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to All Articles
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-12 rounded-full object-cover mr-3">
+                <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                    Candy & Cardio
+                </a>
+            </div>
+            <p class="text-gray-400 mb-6">Balance Your Sweet & Strong</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/casey71dennis" target="_blank" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/casey00dennis" target="_blank" class="text-gray-400 hover:text-pink-400 text-xl transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" class="text-gray-400 hover:text-red-500 text-xl transition-colors">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="https://www.threads.com/@casey00dennis" target="_blank" class="text-gray-400 hover:text-gray-300 text-xl transition-colors">
+                    <i class="fab fa-threads"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Candy & Cardio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 invisible z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = mobileMenuBtn.querySelector('i');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                
+                if (mobileMenu.classList.contains('open')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+
+    <!-- Scroll to Top JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            // Show/hide scroll to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            // Smooth scroll to top when button is clicked
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

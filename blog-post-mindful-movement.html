@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Movement: Finding Balance in Fitness - Candy & Cardio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .article-content h2 {
+            @apply text-2xl font-bold text-gray-800 mt-8 mb-4;
+        }
+        
+        .article-content h3 {
+            @apply text-xl font-semibold text-gray-700 mt-6 mb-3;
+        }
+        
+        .article-content p {
+            @apply text-gray-600 leading-relaxed mb-4;
+        }
+        
+        .article-content ul {
+            @apply list-disc list-inside text-gray-600 mb-4 space-y-2;
+        }
+        
+        .article-content blockquote {
+            @apply border-l-4 border-pink-500 pl-6 italic text-gray-700 my-6 bg-pink-50 py-4 rounded-r-lg;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-auto mr-2">
+                    <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Candy & Cardio
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-3 mt-4 pb-4">
+                    <a href="index.html#home" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="pt-8 md:pt-12 pb-8 bg-gradient-to-r from-pink-100 to-purple-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back to Blog Button -->
+                <div class="mb-6">
+                    <a href="blog.html" class="inline-flex items-center text-purple-600 hover:text-purple-700 transition duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Blog
+                    </a>
+                </div>
+                
+                <div class="text-center">
+                <div class="flex items-center justify-center mb-4 space-x-3">
+                    <span class="bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-medium">Fitness</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Mindful Movement: Finding Balance in Fitness
+                </h1>
+                <p class="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+                    Discover how combining mindfulness with physical activity can transform your fitness journey and overall well-being.
+                </p>
+                <div class="flex items-center justify-center space-x-6 text-gray-500">
+                    <div class="flex items-center">
+                        <i class="far fa-calendar mr-2"></i>
+                        <span>March 15, 2025</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-clock mr-2"></i>
+                        <span>8 min read</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="far fa-user mr-2"></i>
+                        <span>Casey Dennis</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Featured Image -->
+                <div class="mb-8 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Woman doing mindful yoga movement" 
+                         class="w-full h-64 md:h-96 object-cover">
+                </div>
+
+                <!-- Article Body -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 article-content">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Fitness doesn't have to be about pushing through pain or mindlessly going through the motions. When we bring mindfulness to our movement, we create a deeper connection between body and mind that enhances both our physical and mental well-being.
+                    </p>
+
+                    <h2>What is Mindful Movement?</h2>
+                    <p>
+                        Mindful movement is the practice of bringing full awareness to your body during physical activity. It's about tuning into how your body feels, moves, and responds rather than just focusing on burning calories or hitting targets. This approach transforms exercise from a chore into a form of moving meditation.
+                    </p>
+
+                    <blockquote>
+                        "When we move with awareness, every workout becomes an opportunity to connect with our body and find balance in both strength and serenity."
+                    </blockquote>
+
+                    <h2>Benefits of Mindful Fitness</h2>
+                    
+                    <h3>1. Improved Body Awareness</h3>
+                    <p>
+                        When you pay attention to how your body moves, you become more aware of your posture, alignment, and movement patterns. This awareness helps prevent injuries and improves exercise form, making your workouts more effective and safer.
+                    </p>
+
+                    <h3>2. Enhanced Mind-Body Connection</h3>
+                    <p>
+                        Mindful movement strengthens the communication between your brain and body, leading to better coordination, balance, and overall physical performance. You'll find yourself more in tune with your body's needs and capabilities.
+                    </p>
+
+                    <h3>3. Stress Reduction Through Movement</h3>
+                    <p>
+                        Focusing on the present moment during exercise helps quiet mental chatter and reduces stress hormones. Your workout becomes a form of active meditation that leaves you feeling both physically strong and mentally clear.
+                    </p>
+
+                    <h3>4. Greater Exercise Enjoyment</h3>
+                    <p>
+                        When you're fully present during movement, you're more likely to appreciate the experience rather than just enduring it. This leads to more consistent exercise habits and a healthier relationship with fitness.
+                    </p>
+
+                    <h2>How to Practice Mindful Movement</h2>
+                    
+                    <h3>Start with Breath Awareness</h3>
+                    <p>
+                        Begin each workout by taking a few deep breaths. Notice how your breath changes as you move and use it as an anchor to stay present throughout your exercise. Let your breath guide the rhythm of your movements.
+                    </p>
+
+                    <h3>Focus on Physical Sensations</h3>
+                    <p>
+                        Pay attention to how your muscles feel as they contract and release. Notice the sensation of your feet touching the ground, the rhythm of your heartbeat, and the feeling of air on your skin. These sensations keep you grounded in the present moment.
+                    </p>
+
+                    <h3>Quality Over Quantity</h3>
+                    <p>
+                        Instead of rushing through repetitions or trying to go faster, focus on the quality of each movement. Feel each muscle working, maintain proper form, and move with intention rather than automation.
+                    </p>
+
+                    <h2>Mindful Exercises to Try</h2>
+                    
+                    <h3>Yoga and Tai Chi</h3>
+                    <p>
+                        These practices naturally incorporate mindfulness with movement, emphasizing breath awareness, body positioning, and flowing transitions. They're perfect starting points for developing mindful movement skills.
+                    </p>
+
+                    <h3>Walking Meditation</h3>
+                    <p>
+                        Transform your daily walk into a mindful practice by focusing on the sensation of each step, the rhythm of your gait, and your surroundings. This can be done anywhere and requires no special equipment.
+                    </p>
+
+                    <h3>Strength Training with Awareness</h3>
+                    <p>
+                        Even weightlifting can become mindful when you focus on proper form, controlled movements, and the feeling of your muscles working. This approach often leads to better results and fewer injuries.
+                    </p>
+
+                    <h2>Getting Started with Mindful Movement</h2>
+                    
+                    <p>
+                        Start by choosing one workout per week to practice mindfully. Gradually increase as you become more comfortable with the approach. Remember, it's about quality over quantity—even 10 minutes of mindful movement can be more beneficial than an hour of distracted exercise.
+                    </p>
+
+                    <h3>Setting Intentions</h3>
+                    <p>
+                        Before each workout, set a simple intention. This could be "I will stay present with my breath" or "I will listen to my body's needs." Having an intention helps anchor your attention and gives purpose to your practice.
+                    </p>
+
+                    <h2>Overcoming Common Challenges</h2>
+                    
+                    <p>
+                        It's normal for your mind to wander during exercise—that's not failure, it's human. When you notice your thoughts drifting to your to-do list or daily stresses, gently bring your attention back to your body and breath. Each time you do this, you're strengthening both your mindfulness and your mental resilience.
+                    </p>
+
+                    <p>
+                        If you're used to high-intensity workouts, mindful movement might feel slow at first. Remember that building awareness takes practice, and the benefits compound over time. You're not just training your body—you're training your mind to be present.
+                    </p>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="mt-8 bg-white rounded-2xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="images/profile.jpg" alt="Casey Dennis" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Casey Dennis</h3>
+                            <p class="text-gray-600">Wellness Coach & Fitness Enthusiast</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        Casey is a certified wellness coach who specializes in helping busy women find balance through mindful living and fitness. With over 5 years of experience in holistic health, she believes that small, consistent changes can lead to transformative results.
+                    </p>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="mt-12 bg-white rounded-2xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Related Posts</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="blog-post-mindfulness.html" class="group">
+                            <div class="bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Mindfulness" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="mt-4">
+                                <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-medium">Mental Health</span>
+                                <h4 class="text-lg font-bold text-gray-800 mt-3 mb-2">Mindfulness Practices for Busy Women</h4>
+                                <p class="text-gray-600 text-sm">Simple mindfulness techniques that fit into your busy schedule.</p>
+                            </div>
+                        </a>
+                        <a href="blog-post-sleep.html" class="group">
+                            <div class="bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Sleep" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="mt-4">
+                                <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium">Sleep Hygiene</span>
+                                <h4 class="text-lg font-bold text-gray-800 mt-3 mb-2">The Ultimate Guide to Better Sleep</h4>
+                                <p class="text-gray-600 text-sm">Transform your sleep routine with science-backed tips for better rest.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back to Blog -->
+                <div class="mt-8 text-center">
+                    <a href="blog.html" class="inline-flex items-center bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to All Posts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-auto mr-2">
+                    <h3 class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-400">
+                        Candy & Cardio
+                    </h3>
+                </div>
+                <p class="text-gray-400 mb-6">Finding balance in wellness, one step at a time.</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-400 transition">
+                        <i class="fab fa-pinterest text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

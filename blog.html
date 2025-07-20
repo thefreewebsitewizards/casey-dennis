@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Candy and Cardio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-auto mr-3">
+                    <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Candy & Cardio
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link text-pink-500 font-semibold">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-pink-500 transition">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-t border-gray-200">
+                <div class="px-4 py-2 space-y-2">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="block py-2 text-gray-700 hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="block py-2 text-gray-700 hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="block py-2 text-gray-700 hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="block py-2 text-pink-500 font-semibold">Blog</a>
+                    <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-pink-500 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-r from-pink-100 to-cyan-100">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Blog</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Discover wellness tips, fitness guides, and lifestyle inspiration
+            </p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                    <!-- Search Bar -->
+                    <div class="relative flex-1 max-w-md w-full md:w-auto">
+                        <input type="text" id="searchInput" placeholder="Search blog posts..." 
+                               class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    
+                    <!-- Filter Controls -->
+                    <div class="flex gap-3 w-full md:w-auto">
+                        <!-- Filter Dropdown -->
+                        <div class="relative flex-1 md:flex-none">
+                            <select id="categoryFilter" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent bg-white">
+                                <option value="all">All Categories</option>
+                                <option value="mental-health">Mental Health</option>
+                                <option value="nutrition">Nutrition</option>
+                                <option value="sleep">Sleep Hygiene</option>
+                                <option value="fitness">Fitness</option>
+                                <option value="recipes">Recipes</option>
+                                <option value="self-care">Self Care</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Clear Filters -->
+                        <button id="clearFilters" 
+                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition whitespace-nowrap">
+                            Clear Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <a href="blog-post-mindfulness.html" class="block blog-post" data-category="mental-health" data-title="mindfulness practices for busy women" data-content="discover simple yet effective mindfulness techniques that fit into your busy schedule to reduce stress and increase focus">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-pink-100 to-cyan-100">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Woman meditating peacefully in nature" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-medium">Mental Health</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">Mindfulness Practices for Busy Women</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Discover simple yet effective mindfulness techniques that fit into your busy schedule to reduce stress and increase focus.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-pink-500 font-medium">5 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="blog-post-nutrition.html" class="block blog-post" data-category="nutrition" data-title="balanced eating without deprivation" data-content="learn how to enjoy all foods in moderation while maintaining a healthy balanced diet that fuels your body and soul">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-cyan-100 to-yellow-100">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Colorful balanced meal with vegetables and grains" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm font-medium">Nutrition</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">Balanced Eating Without Deprivation</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Learn how to enjoy all foods in moderation while maintaining a healthy, balanced diet that fuels your body and soul.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-cyan-500 font-medium">7 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 3 -->
+                <a href="blog-post-sleep.html" class="block blog-post" data-category="sleep" data-title="the ultimate guide to better sleep" data-content="transform your sleep routine with these science-backed tips for falling asleep faster and waking up refreshed">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-yellow-100 to-pink-100">
+                            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Peaceful bedroom setup for better sleep" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium">Sleep Hygiene</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">The Ultimate Guide to Better Sleep</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Transform your sleep routine with these science-backed tips for falling asleep faster and waking up refreshed.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-yellow-500 font-medium">6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 4 -->
+                <a href="blog-post-fitness.html" class="block blog-post" data-category="fitness" data-title="home workouts that actually work" data-content="effective home workout routines that require minimal equipment but deliver maximum results for busy lifestyles">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-pink-100 to-purple-100">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Woman doing home workout with dumbbells" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-medium">Fitness</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">Home Workouts That Actually Work</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Effective home workout routines that require minimal equipment but deliver maximum results for busy lifestyles.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-pink-500 font-medium">8 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 5 -->
+                <a href="blog-post-recipes.html" class="block blog-post" data-category="recipes" data-title="quick healthy meal prep ideas" data-content="save time and eat well with these delicious meal prep recipes that keep you nourished throughout the week">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-cyan-100 to-green-100">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Meal prep containers with healthy food" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">Recipes</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">Quick & Healthy Meal Prep Ideas</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Save time and eat well with these delicious meal prep recipes that keep you nourished throughout the week.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-green-500 font-medium">10 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 6 -->
+                <a href="blog-post-selfcare.html" class="block blog-post" data-category="self-care" data-title="building a self-care routine that sticks" data-content="create sustainable self-care habits that fit your lifestyle and help you prioritize your mental and physical well-being">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-purple-100 to-pink-100">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Woman practicing self-care with journal, tea, and plants in a cozy setting" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">Self Care</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">Building a Self-Care Routine That Sticks</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Create sustainable self-care habits that fit your lifestyle and help you prioritize your mental and physical well-being.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-purple-500 font-medium">6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Blog Post 7 -->
+                <a href="blog-post-mindful-movement.html" class="block blog-post" data-category="fitness" data-title="mindful movement finding balance in fitness" data-content="discover how combining mindfulness with physical activity can transform your fitness journey and overall well-being">
+                    <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 h-full flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-pink-100 to-purple-100">
+                            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Woman practicing mindful yoga in peaceful setting" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-medium">Fitness</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-gray-800 mb-3">Mindful Movement: Finding Balance in Fitness</h2>
+                            <p class="text-gray-600 mb-4 flex-1">
+                                Discover how combining mindfulness with physical activity can transform your fitness journey and overall well-being.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-green-600 text-sm font-medium">Read Now</span>
+                                <span class="text-pink-500 font-medium">8 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-12 rounded-full object-cover mr-3">
+                <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                    Candy & Cardio
+                </a>
+            </div>
+            <p class="text-gray-400 mb-6">Balance Your Sweet & Strong</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/casey71dennis" target="_blank" class="text-gray-400 hover:text-blue-400 text-xl transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/casey00dennis" target="_blank" class="text-gray-400 hover:text-pink-400 text-xl transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" class="text-gray-400 hover:text-red-500 text-xl transition-colors">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="https://www.threads.com/@casey00dennis" target="_blank" class="text-gray-400 hover:text-gray-300 text-xl transition-colors">
+                    <i class="fab fa-threads"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2024 Candy & Cardio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Search and Filter JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const clearFiltersBtn = document.getElementById('clearFilters');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            function filterPosts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categoryFilter.value;
+
+                blogPosts.forEach(post => {
+                    const title = post.getAttribute('data-title').toLowerCase();
+                    const content = post.getAttribute('data-content').toLowerCase();
+                    const category = post.getAttribute('data-category');
+
+                    const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
+                    const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        post.style.display = 'block';
+                        post.style.opacity = '1';
+                        post.style.transform = 'scale(1)';
+                    } else {
+                        post.style.display = 'none';
+                        post.style.opacity = '0';
+                        post.style.transform = 'scale(0.95)';
+                    }
+                });
+
+                // Show "No results" message if no posts are visible
+                const visiblePosts = Array.from(blogPosts).filter(post => post.style.display !== 'none');
+                let noResultsMsg = document.getElementById('noResultsMessage');
+                
+                if (visiblePosts.length === 0) {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.id = 'noResultsMessage';
+                        noResultsMsg.className = 'col-span-full text-center py-12';
+                        noResultsMsg.innerHTML = `
+                            <div class="text-gray-400 text-6xl mb-4">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-600 mb-2">No blog posts found</h3>
+                            <p class="text-gray-500">Try adjusting your search terms or filters</p>
+                        `;
+                        document.querySelector('.grid').appendChild(noResultsMsg);
+                    }
+                    noResultsMsg.style.display = 'block';
+                } else {
+                    if (noResultsMsg) {
+                        noResultsMsg.style.display = 'none';
+                    }
+                }
+            }
+
+            function clearFilters() {
+                searchInput.value = '';
+                categoryFilter.value = 'all';
+                filterPosts();
+                
+                // Add visual feedback
+                clearFiltersBtn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    clearFiltersBtn.style.transform = 'scale(1)';
+                }, 150);
+            }
+
+            // Event listeners
+            searchInput.addEventListener('input', filterPosts);
+            categoryFilter.addEventListener('change', filterPosts);
+            clearFiltersBtn.addEventListener('click', clearFilters);
+
+            // Add smooth transitions to blog posts
+            blogPosts.forEach(post => {
+                post.style.transition = 'all 0.3s ease';
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Focus search on Ctrl+F or Cmd+F
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+                
+                // Clear filters on Escape
+                if (e.key === 'Escape') {
+                    clearFilters();
+                    searchInput.blur();
+                }
+            });
+
+            // Search input enhancements
+            searchInput.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+
+            searchInput.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                
+                // Toggle hamburger icon
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('open')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

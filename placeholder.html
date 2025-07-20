@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Candy and Cardio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-white to-cyan-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="images/Logo.png" alt="Candy & Cardio Logo" class="h-12 w-auto mr-3">
+                    <a href="index.html" class="brand-font text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Candy & Cardio
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-pink-500 transition">Home</a>
+                    <a href="index.html#about" class="nav-link hover:text-pink-500 transition">About</a>
+                    <a href="index.html#wellness" class="nav-link hover:text-pink-500 transition">Wellness</a>
+                    <a href="index.html#fitness" class="nav-link hover:text-pink-500 transition">Fitness</a>
+                    <a href="blog.html" class="nav-link hover:text-pink-500 transition">Blog</a>
+                    <a href="index.html#contact" class="nav-link hover:text-pink-500 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex items-center justify-center min-h-screen pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Icon -->
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full float-animation">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Coming Soon!
+                    </span>
+                </h1>
+                
+                <!-- Subheading -->
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
+                    We're Working on Something Amazing
+                </h2>
+                
+                <!-- Description -->
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    This page is currently under development. We're crafting something special that aligns with our mission to help you 
+                    <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                        Balance Your Sweet & Strong
+                    </span>
+                </p>
+                
+                <!-- Features Preview -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dumbbell text-pink-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Fitness Content</h3>
+                        <p class="text-gray-600 text-sm">Workout routines and fitness tips</p>
+                    </div>
+                    
+                    <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-cyan-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Wellness Guides</h3>
+                        <p class="text-gray-600 text-sm">Mental health and lifestyle advice</p>
+                    </div>
+                    
+                    <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-apple-alt text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Nutrition Tips</h3>
+                        <p class="text-gray-600 text-sm">Balanced eating and healthy recipes</p>
+                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                    <a href="index.html" 
+                       class="inline-block bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-home mr-2"></i>
+                        Back to Home
+                    </a>
+                    
+                    <a href="blog.html" 
+                       class="inline-block bg-white text-gray-700 px-8 py-3 rounded-full font-semibold border-2 border-gray-200 hover:border-pink-300 hover:text-pink-500 transition duration-300">
+                        <i class="fas fa-blog mr-2"></i>
+                        Visit Blog
+                    </a>
+                </div>
+                
+                <!-- Progress Indicator -->
+                <div class="mt-12">
+                    <p class="text-gray-500 mb-4">Development Progress</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2 max-w-md mx-auto">
+                        <div class="bg-gradient-to-r from-pink-500 to-cyan-500 h-2 rounded-full pulse-animation" style="width: 65%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">65% Complete</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="mt-12">
+                    <p class="text-gray-600 mb-4">Stay connected while we build:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://www.facebook.com/casey71dennis" target="_blank" 
+                           class="text-gray-400 hover:text-blue-500 text-2xl transition-colors transform hover:scale-110">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/casey00dennis" target="_blank" 
+                           class="text-gray-400 hover:text-pink-500 text-2xl transition-colors transform hover:scale-110">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://ph.pinterest.com/caseydennis71/" target="_blank" 
+                           class="text-gray-400 hover:text-red-500 text-2xl transition-colors transform hover:scale-110">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://www.threads.com/@casey00dennis" target="_blank" 
+                           class="text-gray-400 hover:text-gray-600 text-2xl transition-colors transform hover:scale-110">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white/80 backdrop-blur-md py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2024 Candy & Cardio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
